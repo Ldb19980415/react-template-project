@@ -1,0 +1,64 @@
+//  less 支持变量和混合
+/*
+变量使用：
+比如此时在body中定义了一个变量
+body {
+  --my-primary-6: #0091ff;
+  --my-border-color: var(--my-primary-6);  // 在变量中使用另一个变量也是可以的
+}
+
+使用变量：在输入--之后，会有变量的提示
+.arco-tabs-header-title-active {
+  background-color: var(--my-primary-6);
+  color: #fff;
+}
+*/
+
+/*
+定义混合，设置它的属性以及hover、focus属性
+
+// 带边框的样式混合
+.border-hover-focus {
+  background-color: var(--my-bg-color);
+  border-style: solid;
+  border-color: var(--my-border-color);
+  border-radius: 2px;
+
+  &:hover {
+    background-color: var(--my-bg-color);
+    border-color: var(--my-border-hover-color);
+    box-shadow: 0px 0px 0px 2px rgba(24, 144, 255, 0.2);
+  }
+
+  &:focus {
+    background-color: var(--my-bg-color);
+    border-color: var(--my-border-hover-color);
+    box-shadow: 0px 0px 0px 2px rgba(24, 144, 255, 0.2);
+  }
+}
+
+# 使用混合：其实就跟使用函数一样，会把混合里面的内容覆盖到当前未知
+.arco-input-number {
+  border-width: 0;
+  .border-hover-focus();
+}
+*/
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  // color-scheme: light dark;
+  // color: rgba(255, 255, 255, 0.87);
+  // background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
