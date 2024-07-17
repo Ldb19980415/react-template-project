@@ -10,17 +10,16 @@ import {
 interface UseUpdateAntdTableParams<TData extends Data, TParams extends Params> {
   options?: AntdTableOptions<TData, TParams>;
   handleFormData?: (formData: any) => Object;
+  form?: AntdFormUtils;
 }
 export const useUpdateAntdTable = <TData extends Data, TParams extends Params>(
   func: (params: any) => Promise<TData>,
-  form?: AntdFormUtils,
   config?: UseUpdateAntdTableParams<TData, TParams>
 ) => {
-  const { options = {}, handleFormData } = config ?? {};
+  const { options = {}, handleFormData, form } = config ?? {};
   if (form) {
     options.form = form;
   }
-  
   const getData = async (...args: TParams) => {
     const { current, pageSize, sorter, filters } = args[0];
     const formData = args[1];

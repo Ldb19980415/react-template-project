@@ -5,18 +5,19 @@ import { Options, Result } from "ahooks/lib/useRequest/src/types";
 interface UseUpdateRequestParams<TData, TParams extends any[]> {
   options?: Options<TData, TParams>;
   handleFormData?: (formData: any) => Object;
+  form?: AntdFormUtils;
 }
 
 export const useUpdateRequest = <TData, TParams extends any[]>(
   func: (params?: any) => Promise<TData>,
-  form?: AntdFormUtils,
   config?: UseUpdateRequestParams<TData, TParams>
 ): Result<TData, TParams> => {
+  const { form, handleFormData, options } = config ?? {};
   const getParams = () => {
     if (form) {
       const values = form.getFieldsValue();
-      if (config?.handleFormData) {
-        return config.handleFormData(values);
+      if (handleFormData) {
+        return handleFormData(values);
       }
       return values;
     }
@@ -24,7 +25,7 @@ export const useUpdateRequest = <TData, TParams extends any[]>(
   };
   const result = useRequest<TData, TParams>(
     async () => func(getParams()),
-    config?.options
+    options
   );
   return result;
 };
