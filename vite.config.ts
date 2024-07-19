@@ -8,6 +8,9 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: "/src" }],
   },
+  esbuild:{
+    drop: ['console', 'debugger']
+  },
   server: {
     // port: 5001,
     proxy: {
