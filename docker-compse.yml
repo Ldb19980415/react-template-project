@@ -6,3 +6,6 @@ services:
       - "5001:5173"
     container_name: sentinel-flow-ui-container
     image: sentinel-flow-ui-image:latest
+    environment:
+      - SERVER_IP_PORT=172.16.10.102:20418
+      - SERVER_FLOWABLE_IP_PORT=172.16.10.102:20419
