@@ -15,9 +15,11 @@
     "ahooks": "^3.8.0",
     "antd": "^5.19.1",
     "axios": "^1.7.2",
+    "bpmn-js": "^17.9.2",
     "dayjs": "^1.11.11",
     "less": "^4.2.0",
     "react": "^18.3.1",
+    "react-bpmn": "^0.2.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",
     "three": "^0.167.1"

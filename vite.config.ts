@@ -9,7 +9,7 @@ export default defineConfig({
     alias: [{ find: "@", replacement: "/src" }],
   },
   esbuild:{
-    drop: ['console', 'debugger']
+    // drop: ['console', 'debugger']
   },
   server: {
     // port: 5001,
